@@ -4,7 +4,7 @@
     state: directory
     path: "{{ item }}"
     owner: "{{ robot_sweatshop_user }}"
-    group: wcadmin
+    group: "{{ robot_sweatshop_group }}"
     mode: 0775
   with_items:
     - "{{ robot_sweatshop_runtime_root }}"
