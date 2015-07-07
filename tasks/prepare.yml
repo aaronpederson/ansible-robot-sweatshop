@@ -1,0 +1,7 @@
+---
+- group:
+    name: "{{ robot_sweatshop_user }}"
+
+- user:
+    name: "{{ robot_sweatshop_user }}"
+    group: "{{ robot_sweatshop_group }}"

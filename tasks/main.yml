@@ -1,2 +1,3 @@
 ---
+- include: prepare.yml
 - include: configure.yml
