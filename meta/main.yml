@@ -27,4 +27,4 @@ dependencies:
     upstart_exec_flags:
       - start
     upstart_user: "{{ robot_sweatshop_user }}"
-    upstart_user: "{{ robot_sweatshop_group }}"
+    upstart_group: "{{ robot_sweatshop_group }}"
