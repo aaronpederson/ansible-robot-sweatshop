@@ -16,33 +16,32 @@
     - directory-structure
     - robot_sweatshop
 
-- name: Configure | robot_sweatshop
-  template:
-    src: etc/robot_sweatshop/config.yaml
-    dest: /etc/robot_sweatshop/config.yaml
-    owner: "{{ robot_sweatshop_user }}"
-    group: "{{ robot_sweatshop_group }}"
-    mode: 0664
-  notify: Reload Service | robot_sweatshop
-  tags:
-    - robot_sweatshop
+- name: Generate config file | robot_sweatshop
+  command: /usr/local/bin/sweatshop config system --auto
 
-# - name: Configure | robot_sweatshop
-#   lineinfile:
-#     state: present
-#     dest: "{{ robot_sweatshop_config_root }}/config.yaml"
-#     regexp: "{{ item.key }}:"
-#     line: "{{ item.key }}: {{ item.value }}"
-#   with_items:
-#     - { key: pidfile_directory, value: "{{ robot_sweatshop_runtime_root }}" }
-#     - { key: logfile_directory, value: "{{ robot_sweatshop_log_root }}" }
-#     - { key: port,              value: "{{ robot_sweatshop_server_port }}" }
-#     - { key: moneta_directory,  value: "{{ robot_sweatshop_db_root }}" }
-#   notify: Reload Service | mci-server
-#   tags:
-#     - configuration
-#     - precise-configuration
-#     - robot_sweatshop
+- name: Configure | robot_sweatshop
+  lineinfile:
+    state: present
+    dest: "{{ robot_sweatshop_config_root }}/config.yaml"
+    regexp: "{{ item.key }}:"
+    line: "{{ item.key }}: {{ item.value }}"
+  with_items:
+    - { key: pidfile_path,        value: "{{ robot_sweatshop_runtime_root }}" }
+    - { key: logfile_path,        value: "{{ robot_sweatshop_log_root }}" }
+    - { key: job_path,            value: "{{ robot_sweatshop_config_root }}/jobs" }
+    - { key: workspace_path,      value: "{{ robot_sweatshop_config_root }}/workspaces" }
+    - { key: database_path,       value: "{{ robot_sweatshop_db_root }}" }
+    - { key: scripts_path,        value: "{{ robot_sweatshop_config_root }}/scripts" }
+    - { key: http_bind,           value: "{{ robot_sweatshop_http_bind }}" }
+    - { key: http_cross_origin,   value: "{{ robot_sweatshop_http_cross_origin }}" }
+    - { key: overseer_port,       value: "{{ robot_sweatshop_overseer_port }}" }
+    - { key: input_port,          value: "{{ robot_sweatshop_input_port }}" }
+    - { key: conveyor_port,       value: "{{ robot_sweatshop_conveyor_port }}" }
+    - { key: payload_parser_port, value: "{{ robot_sweatshop_payload_parser_port }}" }
+    - { key: job_dictionary_port, value: "{{ robot_sweatshop_job_dictionary_port }}" }
+    - { key: worker_port,         value: "{{ robot_sweatshop_worker_port }}" }
+    - { key: job_timeout_length,  value: "{{ robot_sweatshop_job_timeout }}" }
+  notify: Reload Service | robot_sweatshop
 
 - name: "Upload Config | robot_sweatshop | {{ item.name }} job"
   template:
