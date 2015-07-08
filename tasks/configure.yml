@@ -51,6 +51,7 @@
     group: nogroup
     mode: 0644
   with_items: robot_sweatshop_jobs
+  when: robot_sweatshop_jobs
   notify: Reload Service | robot_sweatshop
   tags:
     - robot_sweatshop
