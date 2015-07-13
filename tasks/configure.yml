@@ -35,11 +35,12 @@
     - { key: http_bind,           value: "{{ robot_sweatshop_http_bind }}" }
     - { key: http_cross_origin,   value: "{{ robot_sweatshop_http_cross_origin }}" }
     - { key: overseer_port,       value: "{{ robot_sweatshop_overseer_port }}" }
-    - { key: input_port,          value: "{{ robot_sweatshop_input_port }}" }
+    - { key: api_port,            value: "{{ robot_sweatshop_api_port }}" }
     - { key: conveyor_port,       value: "{{ robot_sweatshop_conveyor_port }}" }
     - { key: payload_parser_port, value: "{{ robot_sweatshop_payload_parser_port }}" }
     - { key: job_dictionary_port, value: "{{ robot_sweatshop_job_dictionary_port }}" }
     - { key: worker_port,         value: "{{ robot_sweatshop_worker_port }}" }
+    - { key: api_url,             value: "application.{{ project }}-{{ environment_tier }}.{{ domain }}:{{ robot_sweatshop_api_port }}" }
     - { key: job_timeout_length,  value: "{{ robot_sweatshop_job_timeout }}" }
   notify: Reload Service | robot_sweatshop
 

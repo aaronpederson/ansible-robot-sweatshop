@@ -11,7 +11,7 @@ robot_sweatshop_db_root: /data/db/robot_sweatshop
 robot_sweatshop_http_bind: 0.0.0.0
 robot_sweatshop_http_cross_origin: "true"
 robot_sweatshop_overseer_port: 10554
-robot_sweatshop_input_port: 10555
+robot_sweatshop_api_port: 10555
 robot_sweatshop_conveyor_port: 10556
 robot_sweatshop_payload_parser_port: 10557
 robot_sweatshop_job_dictionary_port: 10558
