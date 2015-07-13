@@ -1,7 +1,6 @@
 ---
 robot_sweatshop_user: ci-bot
 robot_sweatshop_group: staff
-robot_sweatshop_user_email: justin.scott1@telus.com
 
 robot_sweatshop_log_root: "{{ log_root | default('/var/log') }}/robot_sweatshop"
 robot_sweatshop_runtime_root: "{{ runtime_root | default('/var/run') }}/robot_sweatshop"
