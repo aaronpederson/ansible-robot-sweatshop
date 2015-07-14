@@ -17,6 +17,7 @@ galaxy_info:
     - "system"
     - "development"
 dependencies:
+  - role: telusdigital.zeromq
   - role: telusdigital.ruby
     ruby_gems:
       - robot_sweatshop
