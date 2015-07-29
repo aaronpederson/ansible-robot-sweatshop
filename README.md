@@ -31,7 +31,7 @@
 ```
 - hosts: servers
   roles:
-    - role: telusdigital.robot_sweatshop
+    - role: telusdigital.robot-sweatshop
       robot_sweatshop_api_port: 8080
       robot_sweatshop_jobs:
         - name: build
