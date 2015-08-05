@@ -43,6 +43,8 @@
     - { key: payload_parser_port, value: "{{ robot_sweatshop_payload_parser_port }}" }
     - { key: job_dictionary_port, value: "{{ robot_sweatshop_job_dictionary_port }}" }
     - { key: worker_port,         value: "{{ robot_sweatshop_worker_port }}" }
+    - { key: logger_port,         value: "{{ robot_sweatshop_logger_port }}" }
+    - { key: reflector_port,      value: "{{ robot_sweatshop_reflector_port }}" }
     - { key: api_url,             value: "{{ system_role }}.{{ project }}-{{ environment_tier }}.{{ domain }}:{{ robot_sweatshop_api_port }}" }
     - { key: job_timeout_length,  value: "{{ robot_sweatshop_job_timeout }}" }
   notify: Reload Service | robot_sweatshop
