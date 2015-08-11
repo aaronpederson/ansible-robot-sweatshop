@@ -47,6 +47,7 @@
     - { key: reflector_port,      value: "{{ robot_sweatshop_reflector_port }}" }
     - { key: api_url,             value: "{{ system_role }}.{{ project }}-{{ environment_tier }}.{{ domain }}:{{ robot_sweatshop_api_port }}" }
     - { key: job_timeout_length,  value: "{{ robot_sweatshop_job_timeout }}" }
+    - { key: worker_count,        value: "{{ robot_sweatshop_worker_count }}" }
   notify: Reload Service | robot_sweatshop
 
 - name: "Upload Config | robot_sweatshop | {{ item.name }} job"
