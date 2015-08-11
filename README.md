@@ -24,6 +24,7 @@
 - `robot_sweatshop_reflector_port` (integer) - The port that the output gets published to.
 - `robot_sweatshop_job_timeout` (integer) - The seconds Robot Sweatshop will wait before requeueing a claimed job.
 - `robot_sweatshop_jobs` (array) - An array of YAML objects that define the jobs.
+- `robot_sweatshop_worker_count` (integer) - How many Robot Sweatshop workers that will spin up.
 
 ## Dependencies
 - [telusdigital.ruby](https://github.com/telusdigital/ansible-ruby/)
