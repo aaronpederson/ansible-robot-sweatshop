@@ -19,7 +19,7 @@
 - name: Generate config file | robot_sweatshop
   command: "{{ item }}"
   with_items:
-    - /usr/local/bin/sweatshop config --auto
+    - /usr/local/bin/sweatshop configure --auto
     - "mv .robot_sweatshop/config.yaml {{ robot_sweatshop_config_root }}"
 
 - name: Configure | robot_sweatshop
